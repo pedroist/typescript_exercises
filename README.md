@@ -30,6 +30,12 @@ Create a tsconfig.json file in your project's root directory. This file specifie
 npx tsc --init
 ```
 
+### Install ts-node
+
+```
+npm install --save-dev ts-node
+```
+
 ### Install testing dependencies (if needed):
 
 ```
