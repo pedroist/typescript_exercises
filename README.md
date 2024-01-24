@@ -17,7 +17,8 @@ This will generate a package.json file with default values.
 ### Install TypeScript:
 
 ```
-npm install -g typescript@4.1.2
+npm install --save-dev typescript@4.1.2
+
 
 tsc --version
 ```
