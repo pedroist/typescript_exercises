@@ -10,8 +10,8 @@ export function removeDuplicates(nums: number[]): number {
 
             nums[numsIndex] = nums[i]
             numsIndex++
-        } else if ((numsCountMap.get(nums[i]) || 0) < 2) {
-            nextMapEntryCount = numsCountMap.get(nums[i]) || 0
+        } else if (numsCountMap.get(nums[i])! < 2) {
+            nextMapEntryCount = numsCountMap.get(nums[i])!
             numsCountMap.set(nums[i], nextMapEntryCount + 1)
 
             nums[numsIndex] = nums[i]
