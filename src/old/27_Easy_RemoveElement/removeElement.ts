@@ -19,7 +19,8 @@ export function removeElement(nums: number[], val: number): number {
     return filteredNums.length
     */
 
-    /* Option B - only 1 cycle - runtime 88ms */
+    /* Option B - only 1 cycle - runtime 88ms but splice has O(n) so that in a loop O(n2) quadratrical */
+    /*
     let removedCount: number = 0
     const numsInitialLength = nums.length
 
@@ -31,4 +32,17 @@ export function removeElement(nums: number[], val: number): number {
     }
 
     return nums.length
+    */
+
+    // Option C - 2 pointer solution - by chatGPT - O(n) loop + coping element constant complex - so it has O(n)
+    let k: number = 0 // k will track the number of valid elements
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[k] = nums[i]
+            k++
+        }
+    }
+
+    return k
 }
