@@ -1,3 +1,4 @@
+/*
 export function maxProfit(prices: number[]): number {
     // fragment the array of length n into an array of n-1 with the differences between days
     let differencesArray: number[] = []
@@ -101,4 +102,20 @@ export const evalNumb = (value: number): boolean | undefined => {
     } else {
         return undefined
     }
+}
+*/
+// ------------------------------------------------------------------
+// The previous solution has time and space complexity O(n) but it could be simplified to the following, by chatGPT:
+
+// mesmo que haja um intervalo maior entre o maior profit, se somarmos o profit de cada dia vai dar o mesmo resultado se so vendesse mais tarde
+export function maxProfit(prices: number[]): number {
+    let totalProfit = 0
+
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] > prices[i - 1]) {
+            totalProfit += prices[i] - prices[i - 1] // Add profit for upward movement
+        }
+    }
+
+    return totalProfit
 }

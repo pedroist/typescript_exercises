@@ -1,3 +1,4 @@
+/*
 export function canCompleteCircuit(gas: number[], cost: number[]): number {
     // calculate differences between gas a cost arrays
     let differencesArrayIndexesTupple: [number, number][] = gas.map(
@@ -67,4 +68,35 @@ export function arrayRotateLeft(arr: any[], count: number) {
     const effectiveCount = ((count % len) + len) % len // Calculate effective count for left rotation
     arr.push(...arr.splice(0, effectiveCount)) // Rotate array to the left
     return arr
+}
+*/
+
+// This solution, according to chatGPT has a complexity of  O(n log n + n^2)
+
+// -------------------------------------------------------------------------------------
+
+// Better solution from chatgpt, with O(n) complexity:
+
+export function canCompleteCircuit(gas: number[], cost: number[]): number {
+    let totalGas = 0 // Total balance of gas
+    let currentGas = 0 // Current balance of gas for this segment
+    let startStation = 0 // Starting station index
+
+    for (let i = 0; i < gas.length; i++) {
+        const balance = gas[i] - cost[i]
+        totalGas += balance
+        currentGas += balance
+
+        // If at any point the current gas becomes negative, it means starting from
+        // the current start station won't allow us to reach this station.
+        // So we move the start station to the next one.
+        if (currentGas < 0) {
+            startStation = i + 1
+            currentGas = 0 // Reset the current gas balance
+        }
+    }
+
+    // If the total gas is greater than or equal to the total cost, we can complete the circuit.
+    // Otherwise, return -1.
+    return totalGas >= 0 ? startStation : -1
 }
