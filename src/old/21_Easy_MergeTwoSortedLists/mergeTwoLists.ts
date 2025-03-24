@@ -1,5 +1,5 @@
 // Definition for singly-linked list.
-class ListNode {
+export class ListNode {
     val: number
     next: ListNode | null
     constructor(val?: number, next?: ListNode | null) {
@@ -41,7 +41,7 @@ class ListNode {
 // }
 
 /* Solution 2 Recursive - by chatGPT - complexity O(n+m)*/
-function mergeTwoLists(
+export function mergeTwoLists(
     list1: ListNode | null,
     list2: ListNode | null
 ): ListNode | null {
