@@ -1,4 +1,4 @@
-import { evalNumb, maxProfit } from "./maxProfit"
+import { /*evalNumb, */ maxProfit } from "./maxProfit"
 
 describe("maxProfit", () => {
     it("returns the maximum profit for the given prices - Example 1", () => {
