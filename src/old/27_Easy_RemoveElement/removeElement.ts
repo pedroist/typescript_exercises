@@ -35,7 +35,7 @@ export function removeElement(nums: number[], val: number): number {
     */
 
     // Option C - 2 pointer solution - by chatGPT - O(n) loop + coping element constant complex - so it has O(n)
-    let k: number = 0 // k will track the number of valid elements
+    let k: number = 0 // k will track the number of valid elements, so this is replacing on the same array some invalid numb by another valid in the array
 
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] !== val) {

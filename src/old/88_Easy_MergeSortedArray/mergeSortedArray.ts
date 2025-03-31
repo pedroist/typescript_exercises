@@ -30,3 +30,5 @@ export function merge(
     nums1.sort((a, b) => a - b)
     console.log(nums1)
 }
+
+/* ChatGPT can give a better solution in terms of complexity */
